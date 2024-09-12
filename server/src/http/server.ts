@@ -5,7 +5,7 @@ import {
   ZodTypeProvider,
 } from "fastify-type-provider-zod";
 import { createGoalRoute } from "./routes/create-goal.route";
-import { getCompletionRoute } from "./routes/get-pending-goals.route";
+import { getPendingGoalsRoute } from "./routes/get-pending-goals.route";
 import { createCompletionRoute } from "./routes/create-completion.route";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
@@ -13,7 +13,7 @@ const app = fastify().withTypeProvider<ZodTypeProvider>();
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
-app.register(getCompletionRoute);
+app.register(getPendingGoalsRoute);
 app.register(createGoalRoute);
 app.register(createCompletionRoute);
 
