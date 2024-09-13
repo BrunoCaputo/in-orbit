@@ -37,6 +37,7 @@ export async function getWeekSummary() {
           gte(goalCompletions.createdAt, firstDayOfWeek)
         )
       )
+      .orderBy(desc(goalCompletions.createdAt))
   );
 
   const goalsCompletedByWeekDay = db.$with("goals_completed_by_week_day").as(
