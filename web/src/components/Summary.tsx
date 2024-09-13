@@ -6,10 +6,10 @@ import { Button } from "./ui/button";
 import { DialogTrigger } from "./ui/dialog";
 import { Progress, ProgressIndicator } from "./ui/progress-bar";
 import { Separator } from "./ui/separator";
-import { OutlineButton } from "./ui/outline-button";
 import { getSummary } from "../http/get-summary";
 import dayjs from "dayjs";
 import ptBR from "dayjs/locale/pt-BR";
+import { PendingGoals } from "./PendingGoals";
 
 dayjs.locale(ptBR);
 
@@ -65,22 +65,7 @@ export function Summary() {
 
       <Separator />
 
-      <div className="flex flex-wrap gap-3">
-        <OutlineButton>
-          <Plus className="size-4 text-zinc-600" />
-          Meditar
-        </OutlineButton>
-
-        <OutlineButton>
-          <Plus className="size-4 text-zinc-600" />
-          Praticar exercício
-        </OutlineButton>
-
-        <OutlineButton>
-          <Plus className="size-4 text-zinc-600" />
-          Acordar cedo
-        </OutlineButton>
-      </div>
+      <PendingGoals />
 
       <div className="flex flex-col gap-6">
         <h2 className="text-xl font-medium">Sua semana</h2>
